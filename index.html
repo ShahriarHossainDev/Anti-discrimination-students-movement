@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Discrimination Student Movement</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">বৈষম্য বিরোধী ছাত্র আন্দোলন</h1>
+        <h2 class="text-center">Anti-Discrimination Student Movement</h2>
+        <p class="text-center">বিশ্ববিদ্যালয়ের বৈষম্য রোধ ও উন্নয়নে ছাত্রদের চাহিদা ও মতামত পত্র<br>(For former and
+            current students of University of Rajshahi)</p>
+
+        <form id="studentForm">
+            <fieldset>
+                <h3>Student Info</h3>
+                <div class="form-group">
+                    <label>ছাত্রের ধরন:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="studentType" id="currentStudent"
+                            value="current">
+                        <label class="form-check-label" for="currentStudent">বর্তমান শিক্ষার্থী (Current
+                            Student)</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="studentType" id="formerStudent"
+                            value="former">
+                        <label class="form-check-label" for="formerStudent">প্রাক্তন শিক্ষার্থী (Former Student)</label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="nameBengali">নাম (বাংলা):</label>
+                    <input type="text" class="form-control" id="nameBengali" placeholder="নাম (বাংলা)">
+                </div>
+                <div class="form-group">
+                    <label for="nameEnglish">Name (English):</label>
+                    <input type="text" class="form-control" id="nameEnglish" placeholder="Name (English)">
+                </div>
+                <div class="form-group">
+                    <label for="department">বিভাগ:</label>
+                    <input type="text" class="form-control" id="department" placeholder="বিভাগ">
+                </div>
+                <div class="form-group">
+                    <label for="rollNumber">রোল/রেজিস্ট্রেশন নং:</label>
+                    <input type="text" class="form-control" id="rollNumber" placeholder="রোল/রেজিস্ট্রেশন নং">
+                </div>
+                <div class="form-group">
+                    <label for="district">জেলা:</label>
+                    <input type="text" class="form-control" id="district" placeholder="জেলা">
+                </div>
+
+                <div class="form-group">
+                    <label>লিঙ্গ:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="current">
+                        <label class="form-check-label" for="male">পুরুষ</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="former">
+                        <label class="form-check-label" for="female">স্ত্রী</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="neuter" value="former">
+                        <label class="form-check-label" for="neuter">ক্লীব</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="common" value="former">
+                        <label class="form-check-label" for="common ">উভয়</label>
+                    </div>
+                </div>
+
+                <h3>Discrimination Categories</h3>
+                <div class="form-group">
+                    <label for="departmentDetails">ডিপার্টমেন্টের ক্ষেত্রে</label>
+                    <div id="departmentFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="departmentDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="researchDetails">গবেষণার ক্ষেত্রে</label>
+                    <div id="researchFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="researchDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="hallDetails">হলের ক্ষেত্রে</label>
+                    <div id="hallFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="hallDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('hallFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="libraryDetails">লাইব্রেরির ক্ষেত্রে</label>
+                    <div id="libraryFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="libraryDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('libraryFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="transportDetails">পরিবহন ক্ষেত্রে</label>
+                    <div id="transportFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="transportDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('transportFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="medicalDetails">চিকিৎসা ক্ষেত্রে</label>
+                    <div id="medicalFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="medicalDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('medicalFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="administrationDetails">প্রশাসনের ক্ষেত্রে</label>
+                    <div id="administrationFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="administrationDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="scholarshipDetails">বৃত্তি ক্ষেত্রে</label>
+                    <div id="scholarshipFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="scholarshipDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="sportsDetails">খেলাধুলার ক্ষেত্রে</label>
+                    <div id="sportsFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="sportsDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="studentDevelopmentDetails">ছাত্র উন্নয়ন ক্ষেত্রে</label>
+                    <div id="studentDevelopmentFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="studentDevelopmentDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="teacherDetails">শিক্ষকদের ক্ষেত্রে</label>
+                    <div id="teacherFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="teacherDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="staffDetails">কর্মচারীর ক্ষেত্রে</label>
+                    <div id="staffFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="staffDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="securityDetails">নিরাপত্তা ক্ষেত্রে</label>
+                    <div id="securityFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="securityDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label>ধর্ম:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="religion" id="muslim" value="muslim">
+                        <label class="form-check-label" for="muslim">মুসলিম</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="religion" id="hindu" value="hindu">
+                        <label class="form-check-label" for="hindu">হিন্দু</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="religion" id="buddhist" value="buddhist">
+                        <label class="form-check-label" for="buddhist">বৌদ্ধ</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="religion" id="christian" value="christian">
+                        <label class="form-check-label" for="christian">খ্রিস্টান</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="religion" id="other" value="other">
+                        <label class="form-check-label" for="other">অন্যান্য</label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label for="religiousDetails">ধর্মীয় ক্ষেত্রে</label>
+                    <div id="religiousFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="religiousDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="otherDetails">অন্যান্য ক্ষেত্রে</label>
+                    <div id="otherFields">
+                        <div class="input-group mt-2">
+                            <textarea class="form-control" name="otherDetails[]" rows="2"
+                                placeholder="বিস্তারিত লিখুন..."></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-success" onclick="addTextField('departmentFields')">+
+                        Add More</button>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label>রাকসু নির্বাচন:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rakshuElection" id="yes" value="yes">
+                        <label class="form-check-label" for="yes">চাই</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="rakshuElection" id="no" value="no">
+                        <label class="form-check-label" for="no">চাইনা</label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label>রাকসু নির্বাচনের ক্ষেত্রে রাজনৈতিক প্রভাব:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="politicalInfluence" id="influenceYes"
+                            value="yes">
+                        <label class="form-check-label" for="influenceYes">থাকবে</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="politicalInfluence" id="influenceNo"
+                            value="no">
+                        <label class="form-check-label" for="influenceNo">থাকবেনা</label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label>শিক্ষার্থী উপস্থিতি ডিজিটালাইজেশন:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="digitalizationAttendance" id="attendanceYes"
+                            value="yes">
+                        <label class="form-check-label" for="attendanceYes">হ্যা</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="digitalizationAttendance" id="attendanceNo"
+                            value="no">
+                        <label class="form-check-label" for="attendanceNo">না</label>
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label>টেবুলেশন শিট ডিজিটালাইজেশন:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="digitalizationTabulation" id="tabulationYes"
+                            value="yes">
+                        <label class="form-check-label" for="tabulationYes">হ্যা</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="digitalizationTabulation" id="tabulationNo"
+                            value="no">
+                        <label class="form-check-label" for="tabulationNo">না</label>
+                    </div>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <label for="phoneNumber">মোবাইল নম্বর</label>
+                    <input type="tel" class="form-control" id="phoneNumber" placeholder="মোবাইল নম্বর">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">ইমেইল</label>
+                    <input type="email" class="form-control" id="email" placeholder="ইমেইল">
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">ছবি</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="photo" accept="image/*"
+                            onchange="previewImage(event)">
+                        <label class="custom-file-label" for="photo">Choose file</label>
+                        <div id="imagePreview" class="mt-2">
+                            <img id="preview" src="" alt="Image Preview"
+                                style="display:none; max-width: 200; height: 200; border: 1px solid #ddd; border-radius: 8px;">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <p>এই চাহিদা ও মতামত পত্র পরবর্তীতে দাবি আব্দারে প্রকাশিত হবে।</p>
+                <p>এই সকল তথ্য শুধুমাত্র বৈষম্য বিরোধী আন্দোলনে ব্যবহৃত হবে। এর কোন অংশ শিক্ষকদের হাতে যাবে না।</p>
+
+            </fieldset>
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
