@@ -52,7 +52,7 @@ document.getElementById('studentForm').addEventListener('submit', function (even
 });
 
 function submitForm(formObject) {
-    fetch('https://script.google.com/macros/s/AKfycbxi8guxzgKlvjrUYzP2AaiC4CJPT-zwOhb6IdlUvmS2JelinQ1ee15pY1K_ZJmK6t7c/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwgZVZW3WWs5sWe3LzxMJ3mbqH_3qwKOfCiM9E0DWNA48ZmCW_5jfLjCstOprPLQ7d-/exec', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
