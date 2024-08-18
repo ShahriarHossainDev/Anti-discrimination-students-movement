@@ -59,13 +59,13 @@ function submitForm(formObject) {
         },
         body: JSON.stringify(formObject)
     })
-        .then(response => response.text())
-        .then(result => {
-            alert('Form submitted successfully!');
-            document.getElementById('studentForm').reset();
-            document.getElementById('preview').style.display = 'none';
-        })
-        .catch(error => console.error('Error:', error));
+    .then(response => response.text())
+    .then(result => {
+        alert('Form submitted successfully!');
+        document.getElementById('studentForm').reset();
+        document.getElementById('preview').style.display = 'none';
+    })
+    .catch(error => console.error('Error:', error));
 }
 
 function previewImage(event) {
